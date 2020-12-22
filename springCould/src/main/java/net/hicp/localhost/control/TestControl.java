@@ -1,9 +1,12 @@
 package net.hicp.localhost.control;
 
+import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import net.hicp.localhost.aop.annotation.AopAnnotation;
 import net.hicp.localhost.async.AsyncTask;
+import net.hicp.localhost.config.entity.UserProperties;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +17,12 @@ import java.util.concurrent.Future;
 @Slf4j
 public class TestControl {
     @Autowired
+    @Lazy
     private AsyncTask task;
+    @Lazy
+    @Autowired
+    private UserProperties userProperties;
+
 
 
     /**
@@ -55,6 +63,11 @@ public class TestControl {
     @AopAnnotation("aop测试")
     public String test2(@RequestParam("name") String name) {
         return "test2:".concat(name);
+    }
+    @GetMapping("/test3")
+    public String test3() {
+        log.info("bxh {}", JSONObject.toJSON(userProperties));
+        return "test3:"+ System.currentTimeMillis();
     }
 
 }

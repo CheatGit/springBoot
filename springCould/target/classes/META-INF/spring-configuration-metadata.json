@@ -1,0 +1,33 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "net.hicp.localhost.config.entity.UserProperties",
+      "name": "bxh.info",
+      "type": "net.hicp.localhost.config.entity.UserProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "net.hicp.localhost.config.entity.UserProperties",
+      "name": "bxh.info.age",
+      "description": "验证",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "net.hicp.localhost.config.entity.UserProperties",
+      "name": "bxh.info.heigth",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "net.hicp.localhost.config.entity.UserProperties",
+      "name": "bxh.info.score",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "net.hicp.localhost.config.entity.UserProperties",
+      "name": "bxh.info.weight",
+      "type": "java.lang.String"
+    }
+  ]
+}
